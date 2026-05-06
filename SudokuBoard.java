@@ -146,7 +146,7 @@ public class SudokuBoard {
         }
         return true;
     }
-
+// added solve method to solve the sudokuBoard using recursive backtracking
     public boolean solve() {
         if(!isValid()) {
             return false;
