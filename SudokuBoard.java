@@ -168,6 +168,7 @@ public class SudokuBoard {
                 }
             }
         }
+        return false;
     }
 
 
