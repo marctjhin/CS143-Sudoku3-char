@@ -6,6 +6,32 @@ public class GameEngine
 		System.out.println("Is valid: " + game.isValid());
 		System.out.println("Is solved: " + game.isSolved());
 		System.out.println(game);
+
+		// Invalid board
+        if (!game.isValid()) {
+			System.out.println();
+            System.out.println("Board is invalid and cannot be solved.");
+        }
+
+        // solved board
+        else if (game.isSolved()) {
+			System.out.println();
+            System.out.println("Board is already solved.");
+        }
+
+        // try to solve
+        else {
+			System.out.println();
+			System.out.println("Solving the board...");
+
+            if (game.solve()) {
+                System.out.println("Solved!");
+				System.out.println();
+                System.out.println(game);
+            } else {
+                System.out.println("There is no solution.");
+            }
+
 	}
 }
 
