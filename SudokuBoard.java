@@ -151,12 +151,23 @@ public class SudokuBoard {
         if(!isValid()) {
             return false;
         }
-      
         if(isSolved()) {
             return true;
         }
-      
-        return false;
+        for (int r = 0; r < board.length; r++) {
+            for (int c = 0; c < board[r].length; c++) {
+                if (board[r][c] == '-') {
+                    for (char num = '1'; num <= '9'; num++) {
+                        board[r][c] = num;
+                        if (isValid() && solve()) {
+                            return true;
+                        }
+                        board[r][c] = '-'; 
+                    }
+                    return false;
+                }
+            }
+        }
     }
 
 
