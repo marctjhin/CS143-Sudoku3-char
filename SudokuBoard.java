@@ -147,6 +147,19 @@ public class SudokuBoard {
         return true;
     }
 
+    public boolean solve() {
+        if(!isValid()) {
+            return false;
+        }
+      
+        if(isSolved()) {
+            return true;
+        }
+      
+        return false;
+    }
+
+
     public String toString() {
         StringBuilder result = new StringBuilder();
         for (int r = 0; r < board.length - 1; r++) {
