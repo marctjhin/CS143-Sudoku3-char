@@ -148,12 +148,15 @@ public class SudokuBoard {
     }
 // added solve method to solve the sudokuBoard using recursive backtracking
     public boolean solve() {
+        // if the board is not valid it won;t be solved
         if(!isValid()) {
             return false;
         }
+        // if the board is already solved then don't need the recursion method and returns true
         if(isSolved()) {
             return true;
         }
+        // Recursive Backtracking
         for (int r = 0; r < board.length; r++) {
             for (int c = 0; c < board[r].length; c++) {
                 if (board[r][c] == '-') {
