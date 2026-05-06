@@ -157,15 +157,15 @@ public class SudokuBoard {
             return true;
         }
         // Recursive Backtracking
-        for (int r = 0; r < board.length; r++) {
+        for (int r = 0; r < board.length; r++) { // check the board
             for (int c = 0; c < board[r].length; c++) {
-                if (board[r][c] == '-') {
-                    for (char num = '1'; num <= '9'; num++) {
+                if (board[r][c] == '-') { // check if the box is empty or not
+                    for (char num = '1'; num <= '9'; num++) { // try for 1 - 9
                         board[r][c] = num;
-                        if (isValid() && solve()) {
+                        if (isValid() && solve()) { // check if its valid and could be a solution
                             return true;
                         }
-                        board[r][c] = '-'; 
+                        board[r][c] = '-'; // if the number does not work then remove it and restart recursion
                     }
                     return false;
                 }
